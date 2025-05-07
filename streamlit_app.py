@@ -35,11 +35,10 @@ fig2, ax2 = plt.subplots()
 sns.boxplot(data=df, x='quality_label', y=feature, order=['low', 'medium', 'high'], ax=ax2)
 st.pyplot(fig2)
 
-# Regression plot: Alcohol vs Residual Sugar by Quality
+# Regression plot: Alcohol vs Residual Sugar by Wine Quality
 st.subheader("Alcohol vs Residual Sugar with Regression by Wine Quality")
-fig3, ax3 = plt.subplots()
-sns.lmplot(data=df, x='residual_sugar', y='alcohol', hue='quality_label', height=5, aspect=1.5)
-st.pyplot(fig3)
+lm_fig = sns.lmplot(data=df, x='residual_sugar', y='alcohol', hue='quality_label', height=5, aspect=1.5)
+st.pyplot(lm_fig.figure)
 
 # Conclusion Text
 st.markdown("""
