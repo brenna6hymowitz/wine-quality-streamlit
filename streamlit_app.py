@@ -37,16 +37,8 @@ st.pyplot(fig2)
 
 # Regression plot: Alcohol vs Residual Sugar by Wine Quality
 st.subheader("Alcohol vs Residual Sugar with Regression by Wine Quality")
-lm_plot = sns.lmplot(
-    data=w_df,
-    x='residual_sugar',
-    y='alcohol',
-    hue='quality_label',
-    height=5,
-    aspect=1.5,
-    ci=95
-)
-
+lm_fig = sns.lmplot(data=df, x='residual_sugar', y='alcohol', hue='quality_label', height=5, aspect=1.5)
+st.pyplot(lm_fig.figure)
 # This line ensures the plot renders
 st.pyplot(lm_plot.figure)
 
