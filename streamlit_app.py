@@ -38,9 +38,7 @@ st.pyplot(fig2)
 # Regression plot: Alcohol vs Residual Sugar by Wine Quality
 st.subheader("Alcohol vs Residual Sugar with Regression by Wine Quality")
 lm_fig = sns.lmplot(data=df, x='residual_sugar', y='alcohol', hue='quality_label', height=5, aspect=1.5)
-st.pyplot(lm_fig.figure)
-# This line ensures the plot renders
-st.pyplot(lm_plot.figure)
+st.pyplot(lm_fig.figure)  # ✅ Correct line – fixed the bug
 
 # Conclusion Text
 st.markdown("""
@@ -48,6 +46,4 @@ st.markdown("""
 - **Alcohol** level is the best predictor of wine quality.
 - **Residual sugar**, **density**, and **fixed acidity** show no clear relationship with quality.
 - Wines with **higher alcohol** content are more likely to be labeled as high-quality.
-
----
 """)
